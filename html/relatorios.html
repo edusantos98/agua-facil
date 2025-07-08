@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Relatório Diário - Água Fácil</title>
+  <link rel="stylesheet" href="../css/relatorios.css">
+</head>
+<body>
+  <header>
+    <h1>📅 Relatório Diário</h1>
+    <a href="../dashboard.html">← Voltar para o Dashboard</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>Relatório de Vendas</h2>
+      <button onclick="limparRelatorio()">🧹 Limpar Relatórios</button>
+      <button onclick="desfazerLimpeza()">↩️ Desfazer</button>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Fardos Vendidos</th>
+            <th>Galões Vendidos</th>
+            <th>Total (R$)</th>
+            <th>Pagos (R$)</th>
+            <th>Em Aberto (R$)</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaRelatorio">
+          <!-- Relatório será preenchido aqui -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="resumo-relatorio">
+      <h2>Dados de Hoje</h2>
+      <ul>
+        <li>Clientes que compraram hoje: <strong id="clientesAtivosHoje">0</strong></li>
+        <li>Clientes com dívida ativa: <strong id="clientesComDivida">0</strong></li>
+        <li>Galões vendidos: <strong id="galoesVendidos">0</strong></li>
+        <li>Fardos vendidos: <strong id="fardosVendidos">0</strong></li>
+        <li>Valor total vendido: <strong id="valorTotal">R$ 0,00</strong></li>
+        <li>Valor médio por venda: <strong id="valorMedioVenda">R$ 0,00</strong></li>
+        <li>Valor pago: <strong id="valorPago">R$ 0,00</strong></li>
+        <li>Percentual pago: <strong id="percentualPago">0%</strong></li>
+        <li>Valor em aberto (anotado): <strong id="valorAberto">R$ 0,00</strong></li>
+        <li>Vendas em aberto atrasadas: <strong id="vendasAtrasadas">0</strong></li>
+        <li>Produto mais vendido: <strong id="produtoMaisVendido">-</strong></li>
+        <li>Dívida ativa total dos clientes: <strong id="dividaAtiva">R$ 0,00</strong></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="../js/relatorios.js"></script>
+</body>
+</html>

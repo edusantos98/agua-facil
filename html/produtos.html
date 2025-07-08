@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Produtos</title>
+  <link rel="stylesheet" href="../css/produtos.css">
+</head>
+<body>
+  <header>
+    <h1>Cadastro de Produtos</h1>
+    <a href="../dashboard.html">← Voltar para o Dashboard</a>
+  </header>
+
+  <main>
+    <section class="cadastro-produto">
+      <h2>Registrar Produto</h2>
+
+      <form id="formProduto">
+        <label for="categoria">Categoria:</label>
+        <select id="categoria" name="categoria" required>
+          <option value="">Selecione a categoria</option>
+          <option value="Galao">Galão</option>
+          <option value="Fardo">Fardo</option>
+        </select>
+
+        <br><br>
+
+        <label for="produto">Produto:</label>
+        <select id="produto" name="produto" required>
+          <option value="">Selecione um produto</option>
+        </select>
+
+        <br><br>
+
+        <label for="quantidade">Quantidade em Estoque:</label>
+        <input type="number" id="quantidade" name="quantidade" required />
+
+        <br>
+
+        <label for="preco">Preço (R$):</label>
+        <input type="number" id="preco" name="preco" step="0.01" required />
+
+        <br>
+
+        <button type="submit">Registrar Produto</button>
+      </form>
+    </section>
+
+    <section class="lista-produtos">
+      <h2>Produtos Cadastrados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Quantidade</th>
+            <th>Preço (R$)</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaProdutos">
+          <!-- Produtos serão listados aqui -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="historico-produtos">
+  <h2>Histórico de Ações</h2>
+  <ul id="listaHistorico">
+    <!-- Histórico será preenchido via JavaScript -->
+  </ul>
+  </section>
+
+  </main>
+
+  <script src="../js/produtos.js"></script>
+</body>
+</html>

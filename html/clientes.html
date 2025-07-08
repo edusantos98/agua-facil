@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clientes</title>
+  <link rel="stylesheet" href="../css/clientes.css">
+</head>
+<body>
+  <header>
+    <h1>Clientes</h1>
+    <a href="../dashboard.html">← Voltar para o Dashboard</a>
+  </header>
+
+  <main>
+    <section class="cadastro">
+      <h2>Cadastrar novo cliente</h2>
+      <form id="formCliente">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required />
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" name="telefone" />
+
+        <label for="bairro">Bairro:</label>
+        <select id="bairro" name="bairro" required>
+          <option value="">Selecione um bairro</option>
+          <option value="Quebra-Copo">Quebra-Copo</option>
+          <option value="São Sebastião">São Sebastião</option>
+          <option value="Nitéroi">Nitéroi</option>
+        </select>
+
+        <button type="submit">➕ Adicionar Cliente</button>
+      </form>
+    </section>
+
+    <section>
+      <label for="filtroBairro">Filtrar por bairro:</label>
+      <select id="filtroBairro">
+        <option value="todos">Todos</option>
+        <option value="Quebra-Copo">Quebra-Copo</option>
+        <option value="São Sebastião">São Sebastião</option>
+        <option value="Nitéroi">Nitéroi</option>
+      </select>
+    </section>
+
+    <section class="lista-clientes">
+      <h2>Clientes cadastrados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Bairro</th>
+            <th>Dívida (R$)</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaClientes">
+          <!-- Clientes via JS -->
+        </tbody>
+      </table>
+    </section>
+    <section id="formEdicao" style="display: none; margin-top: 1rem; border: 1px solid #ccc; padding: 1rem;">
+  <h3>Editar Cliente</h3>
+  <form onsubmit="salvarEdicaoCliente(event)">
+    <input type="hidden" id="editIndex">
+    <label>Nome:</label><br>
+    <input type="text" id="editNome" required><br><br>
+
+    <label>Telefone:</label><br>
+    <input type="text" id="editTelefone"><br><br>
+
+    <label>Bairro:</label><br>
+    <select id="editBairro" required>
+      <option value="">Selecione um bairro</option>
+      <option value="Quebra-Copo">Quebra-Copo</option>
+      <option value="São Sebastião">São Sebastião</option>
+      <option value="Nitéroi">Nitéroi</option>
+    </select><br><br>
+
+    <button type="submit">💾 Salvar</button>
+    <button type="button" onclick="cancelarEdicao()">Cancelar</button>
+  </form>
+</section>
+
+    <!-- Histórico do cliente -->
+    <section class="historico-cliente">
+      <h3>Histórico do Cliente: <span id="nomeHistorico"></span></h3>
+      <button onclick="fecharHistorico()">Fechar Histórico</button>
+      <div>
+        <h4>Compras:</h4>
+        <ul id="listaCompras"></ul>
+      </div>
+      <div>
+        <h4>Pagamentos:</h4>
+        <ul id="listaPagamentos"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/clientes.js"></script>
+  </body>
+</html>

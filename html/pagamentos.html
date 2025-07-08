@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pagamentos - Água Fácil</title>
+  <link rel="stylesheet" href="../css/pagamentos.css">
+</head>
+<body>
+  <header>
+    <h1>💸 Pagamentos de Clientes</h1>
+    <a href="../dashboard.html">← Voltar para o Dashboard</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>Clientes com Dívidas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Bairro</th>
+            <th>Dívida (R$)</th>
+            <th>Abater valor</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaPagamentos">
+          <!-- Preenchido via JS -->
+        </tbody>
+      </table>
+    </section>
+    <section>
+  <h2>Histórico de Pagamentos</h2>
+  <table>
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Valor Pago (R$)</th>
+      <th>Data</th>
+      <th>Ação</th> <!-- NOVO -->
+    </tr>
+  </thead>
+  <tbody id="historicoPagamentos">
+    <!-- Pagamentos serão carregados aqui via JS -->
+  </tbody>
+</table>
+
+</section>
+
+  </main>
+
+  <script src="../js/pagamentos.js"></script>
+</body>
+</html>
